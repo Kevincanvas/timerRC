@@ -23,7 +23,7 @@
 	  <div class="row h-100 justify-content-center align-items-center">
 	    <div class="col-lg-12 text-center">
 	    	<span class="h4 text-white" id="timer"></span><br>
-	    	<img class="mt-5" src="https://media.tumblr.com/tumblr_lqos6393QO1qffk45.gif" alt="">
+	    	<img class="mt-5 img-fluid" src="https://media.tumblr.com/tumblr_lqos6393QO1qffk45.gif" alt="">
 
 	    	<div class="mt-5">
 	    		<p class="text-center h5" style="color:#50a5ff;" id="progress_porcent"></p>
@@ -51,7 +51,7 @@
 		function repeater() {
 
 			date2 = new Date();
-			date1 = new Date( date2.getFullYear() + '/' + ( date2.getMonth() + 1 ) + '/'+ date2.getDate() +'/'+ ' 19:00:00');
+			date1 = new Date( date2.getFullYear() + '/' + ( date2.getMonth() + 1 ) + '/'+ date2.getDate() +'/'+ ' 14:35:00');
 			date3 = new Date( date2.getFullYear() + '/' + ( date2.getMonth() + 1 ) + '/'+ date2.getDate() +'/'+ ' 8:30:00');
 			
 			var date3absd = Math.abs(date3);
@@ -78,7 +78,13 @@
 
 			$('#progress_porcent_cq').html( "Cuanto queda - " + cuanto_queda + '%');
 
-			document.getElementById("timer").innerHTML = "<span class='h1 font-weight-bold'>" + hours + " Horas </span><br><span class='h2'>" + minutes + " Minutos </span><br><span class='h3'>" + seconds + " Segundos</span> <br><span class='h3'>" + miliseconds + " Milisegundos</span> <br><span class='h2'>Para Irme</span>"; // watch for spelling
+
+			if( cuanto_queda > 0 ) {
+				
+				document.getElementById("timer").innerHTML = "<span class='h1 font-weight-bold'>" + hours + " Horas </span><br><span class='h2'>" + minutes + " Minutos </span><br><span class='h3'>" + seconds + " Segundos</span> <br><span class='h3'>" + miliseconds + " Milisegundos</span> <br><span class='h2'>Para Irme</span>";
+			}
+
+			 // watch for spelling
 
 		    setTimeout(repeater, 1);
 		}
